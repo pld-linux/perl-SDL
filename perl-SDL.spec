@@ -2,7 +2,7 @@
 Summary:	SDL perl module
 Summary(pl):	Modu³ perla SDL
 Name:		perl-SDL
-Version:	1.18
+Version:	1.18.5
 Release:	1
 License:	LGPL
 Group:		Development/Languages/Perl
@@ -49,11 +49,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
+gzip -9nf BUGS CHANGELOG TODO README
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc BUGS CHANGELOG SFont-README TODO
+%doc *.gz
+%{_mandir}/man3/*
 %{perl_sitearch}/SDL*
 %{perl_sitearch}/auto/SDL*
