@@ -63,7 +63,7 @@ swobody z API SDL i próbuje siê dopasowaæ do idei SDL oraz Perla.
 
 %build
 %{__perl} Makefile.PL \
-	INSTALLDIRS=vendor 
+	INSTALLDIRS=vendor
 %{__make} OPTIMIZE="%{rpmcflags} -I/usr/X11R6/include"
 
 %{!?_without_tests:%{__make} test}
