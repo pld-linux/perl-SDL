@@ -21,7 +21,7 @@ Summary(sv):	SDL Perlmodul
 Summary(uk):	Модуль для Perl SDL
 Summary(zh_CN):	SDL Perl дё©И
 Name:		perl-SDL
-Version:	1.18.7
+Version:	1.19.1
 Release:	1
 License:	LGPL
 Group:		Development/Languages/Perl
