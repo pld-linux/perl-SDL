@@ -27,6 +27,7 @@ License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	http://sdlperl.org/downloads/SDL_perl-%{version}.tar.gz
 Patch0:		%{name}-detection.patch
+Patch1:		%{name}-g-owno.patch
 URL:		http://sdlperl.org/
 BuildRequires:	OpenGL-devel
 BuildRequires:	SDL-devel
@@ -59,10 +60,11 @@ swobody z API SDL i próbuje siê dopasowaæ do idei SDL oraz Perla.
 %prep
 %setup -q -n SDL_perl-%{version}
 %patch0 -p1
+%patch1 -p1
 
 %build
 perl Makefile.PL
-%{__make} OPTIMIZE="%{rpmcflags}"
+%{__make} OPTIMIZE="%{rpmcflags} -I/usr/X11R6/include"
 
 %{!?_without_tests:%{__make} test}
 
@@ -81,4 +83,5 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_sitearch}/SDL*
 %dir %{perl_sitearch}/auto/SDL_perl
 %{perl_sitearch}/auto/SDL_perl/SDL_perl.bs
+%{perl_sitearch}/auto/SDL/autosplit.ix
 %attr(755,root,root) %{perl_sitearch}/auto/SDL_perl/SDL_perl.so
