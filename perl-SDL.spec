@@ -7,7 +7,7 @@ Summary:	Simple DirectMedia Layer Perl
 Summary(pl):	Interfejs Simple DirectMedia Layer dla Perla
 Name:		perl-SDL
 Version:	1.20.0
-Release:	4
+Release:	5
 License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	ftp://sdlperl.org/SDL_perl/SDL_perl-%{version}.tar.gz
@@ -67,8 +67,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc BUGS CHANGELOG TODO README
 %{_mandir}/man3/*
-%{perl_vendorarch}/SDL*
+%{perl_vendorarch}/SDL*.pm
+%{perl_vendorarch}/SDL
+%dir %{perl_vendorarch}/auto/SDL
+%{perl_vendorarch}/auto/SDL/autosplit.ix
 %dir %{perl_vendorarch}/auto/SDL_perl
 %{perl_vendorarch}/auto/SDL_perl/SDL_perl.bs
-%{perl_vendorarch}/auto/SDL/autosplit.ix
 %attr(755,root,root) %{perl_vendorarch}/auto/SDL_perl/SDL_perl.so
