@@ -25,7 +25,7 @@ Version:	1.19.1
 Release:	1
 License:	LGPL
 Group:		Development/Languages/Perl
-Source0:	http://sdlperl.org/downloads/SDL_perl-%{version}.tar.gz
+Source0:	ftp://sdlperl.org/SDL_perl/SDL_perl-%{version}.tar.gz
 Patch0:		%{name}-detection.patch
 Patch1:		%{name}-g-owno.patch
 URL:		http://sdlperl.org/
