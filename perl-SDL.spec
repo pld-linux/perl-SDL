@@ -12,7 +12,7 @@ Summary(fr):	Module Perl SDL
 Summary(it):	Modulo di Perl SDL
 Summary(ja):	SDL Perl ¥â¥¸¥å¡¼¥ë
 Summary(ko):	SDL ÆÞ ¸ðÁÙ
-Summary(no):	Perlmodul SDL
+Summary(nb):	Perlmodul SDL
 Summary(pl):	Modu³ Perla SDL
 Summary(pt):	Módulo de Perl SDL
 Summary(pt_BR):	Módulo Perl SDL
