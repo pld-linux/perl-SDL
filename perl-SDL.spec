@@ -22,7 +22,7 @@ Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl SDL
 Summary(zh_CN):	SDL Perl Ä£¿é
 Name:		perl-SDL
 Version:	1.20.0
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	ftp://sdlperl.org/SDL_perl/SDL_perl-%{version}.tar.gz
@@ -39,7 +39,7 @@ BuildRequires:	glut-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	perl-devel >= 5.6
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	smpeg-devel
 Provides:	perl(SDL::OpenGL)
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -61,7 +61,8 @@ swobody z API SDL i próbuje siê dopasowaæ do idei SDL oraz Perla.
 %patch0 -p1
 
 %build
-%{__perl} Makefile.PL
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor 
 %{__make} OPTIMIZE="%{rpmcflags} -I/usr/X11R6/include"
 
 %{!?_without_tests:%{__make} test}
@@ -78,8 +79,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc BUGS CHANGELOG TODO README
 %{_mandir}/man3/*
-%{perl_sitearch}/SDL*
-%dir %{perl_sitearch}/auto/SDL_perl
-%{perl_sitearch}/auto/SDL_perl/SDL_perl.bs
-%{perl_sitearch}/auto/SDL/autosplit.ix
-%attr(755,root,root) %{perl_sitearch}/auto/SDL_perl/SDL_perl.so
+%{perl_vendorarch}/SDL*
+%dir %{perl_vendorarch}/auto/SDL_perl
+%{perl_vendorarch}/auto/SDL_perl/SDL_perl.bs
+%{perl_vendorarch}/auto/SDL/autosplit.ix
+%attr(755,root,root) %{perl_vendorarch}/auto/SDL_perl/SDL_perl.so
