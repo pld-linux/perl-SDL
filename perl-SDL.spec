@@ -21,13 +21,12 @@ Summary(sv):	SDL Perlmodul
 Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl SDL
 Summary(zh_CN):	SDL Perl Ä£¿é
 Name:		perl-SDL
-Version:	1.19.1
+Version:	1.20.0
 Release:	1
 License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	ftp://sdlperl.org/SDL_perl/SDL_perl-%{version}.tar.gz
 Patch0:		%{name}-detection.patch
-Patch1:		%{name}-g-owno.patch
 URL:		http://sdlperl.org/
 BuildRequires:	OpenGL-devel
 BuildRequires:	SDL-devel
@@ -60,7 +59,6 @@ swobody z API SDL i próbuje siê dopasowaæ do idei SDL oraz Perla.
 %prep
 %setup -q -n SDL_perl-%{version}
 %patch0 -p1
-%patch1 -p1
 
 %build
 perl Makefile.PL
