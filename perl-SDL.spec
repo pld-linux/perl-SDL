@@ -22,7 +22,7 @@ Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl SDL
 Summary(zh_CN):	SDL Perl Ä£¿é
 Name:		perl-SDL
 Version:	1.20.0
-Release:	2
+Release:	3
 License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	ftp://sdlperl.org/SDL_perl/SDL_perl-%{version}.tar.gz
@@ -32,10 +32,10 @@ URL:		http://sdlperl.org/
 BuildRequires:	OpenGL-devel
 BuildRequires:	SDL-devel
 BuildRequires:	SDL_gfx-devel
+BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL_net-devel
 BuildRequires:	SDL_ttf-devel
-BuildRequires:	SDL_image-devel
 BuildRequires:	glut-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
@@ -71,7 +71,8 @@ swobody z API SDL i próbuje siê dopasowaæ do idei SDL oraz Perla.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
