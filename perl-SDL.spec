@@ -3,23 +3,8 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-Summary:	SDL Perl module
-Summary(cs):	Modul SDL pro Perl
-Summary(da):	Perlmodul SDL
-Summary(de):	SDL Perl Modul
-Summary(es):	Módulo de Perl SDL
-Summary(fr):	Module Perl SDL
-Summary(it):	Modulo di Perl SDL
-Summary(ja):	SDL Perl ¥â¥¸¥å¡¼¥ë
-Summary(ko):	SDL ÆÞ ¸ðÁÙ
-Summary(nb):	Perlmodul SDL
-Summary(pl):	Modu³ Perla SDL
-Summary(pt):	Módulo de Perl SDL
-Summary(pt_BR):	Módulo Perl SDL
-Summary(ru):	íÏÄÕÌØ ÄÌÑ Perl SDL
-Summary(sv):	SDL Perlmodul
-Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl SDL
-Summary(zh_CN):	SDL Perl Ä£¿é
+Summary:	Simple DirectMedia Layer Perl
+Summary(pl):	Interfejs Simple DirectMedia Layer dla Perla
 Name:		perl-SDL
 Version:	1.20.0
 Release:	4
@@ -39,7 +24,7 @@ BuildRequires:	SDL_ttf-devel
 BuildRequires:	glut-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
-BuildRequires:	perl-devel >= 5.6
+BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	smpeg-devel
 Provides:	perl(SDL::OpenGL)
