@@ -7,7 +7,7 @@ Summary:	Simple DirectMedia Layer Perl
 Summary(pl):	Interfejs Simple DirectMedia Layer dla Perla
 Name:		perl-SDL
 Version:	2.1.0
-Release:	0.1
+Release:	1
 License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	http://search.cpan.org/CPAN/authors/id/D/DG/DGOEHRIG/SDL_Perl-%{version}.tar.gz
@@ -56,8 +56,12 @@ swobody z API SDL i próbuje siê dopasowaæ do idei SDL oraz Perla.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-./Build install \
-	DESTDIR=$RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT{%{_mandir}/man3,%{perl_vendorarch}/{SDL,auto}}
+
+cp -ar blib/arch/*	$RPM_BUILD_ROOT%{perl_vendorarch}
+cp -ar blib/lib/*	$RPM_BUILD_ROOT%{perl_vendorarch}
+
+install blib/libdoc/*	$RPM_BUILD_ROOT%{_mandir}/man3
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -69,7 +73,12 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/SDL*.pm
 %{perl_vendorarch}/SDL
 %dir %{perl_vendorarch}/auto/SDL
-%{perl_vendorarch}/auto/SDL/autosplit.ix
 %dir %{perl_vendorarch}/auto/SDL_perl
 %{perl_vendorarch}/auto/SDL_perl/SDL_perl.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/SDL_perl/SDL_perl.so
+%dir %{perl_vendorarch}/auto/SDL/OpenGL
+%{perl_vendorarch}/auto/SDL/OpenGL/OpenGL.bs
+%attr(755,root,root)%{perl_vendorarch}/auto/SDL/OpenGL/OpenGL.so
+%dir %{perl_vendorarch}/auto/SDL/SFont
+%{perl_vendorarch}/auto/SDL/SFont/SFont.bs
+%attr(755,root,root)%{perl_vendorarch}/auto/SDL/SFont/SFont.so
