@@ -46,22 +46,22 @@ swobody z API SDL i próbuje siê dopasowaæ do idei SDL oraz Perla.
 
 %prep
 %setup -q -n SDL_Perl-%{version}
-%patch0 -p1
+#%patch0 -p1
 
 %build
-%{__perl} Build.PL
+%{__perl} Build.PL \
+	installdirs=vendor \
+	perl=%{__perl} \
+	destdir=$RPM_BUILD_ROOT \
+	config='optflags=%{rpmcflags}'
 ./Build
+
 %{?with_tests:./Build test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT{%{_mandir}/man3,%{perl_vendorarch}/{SDL,auto}}
-
-cp -ar blib/arch/*	$RPM_BUILD_ROOT%{perl_vendorarch}
-cp -ar blib/lib/*	$RPM_BUILD_ROOT%{perl_vendorarch}
-
-install blib/libdoc/*	$RPM_BUILD_ROOT%{_mandir}/man3
+./Build install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
