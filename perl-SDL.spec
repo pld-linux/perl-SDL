@@ -1,6 +1,6 @@
 #
 # Conditional build:
-# _without_tests - do not perform "make test"
+%bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	SDL Perl module
@@ -64,9 +64,10 @@ swobody z API SDL i próbuje siê dopasowaæ do idei SDL oraz Perla.
 %build
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
-%{__make} OPTIMIZE="%{rpmcflags} -I/usr/X11R6/include"
+%{__make} \
+	OPTIMIZE="%{rpmcflags} -I/usr/X11R6/include"
 
-%{!?_without_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
