@@ -22,7 +22,7 @@ Summary(uk):	Модуль для Perl SDL
 Summary(zh_CN):	SDL Perl дё©И
 Name:		perl-SDL
 Version:	1.20.0
-Release:	3
+Release:	4
 License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	ftp://sdlperl.org/SDL_perl/SDL_perl-%{version}.tar.gz
@@ -31,7 +31,7 @@ Patch0:		%{name}-detection.patch
 URL:		http://sdlperl.org/
 BuildRequires:	OpenGL-devel
 BuildRequires:	SDL-devel
-BuildRequires:	SDL_gfx-devel
+BuildRequires:	SDL_gfx-devel >= 2.0.10
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL_net-devel
