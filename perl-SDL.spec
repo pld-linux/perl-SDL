@@ -1,6 +1,6 @@
 #
 # Conditional build:
-# _without_tests - do not perform "make test"
+# _with_tests - perform "make test" - /dev/dsp access is required
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	SDL Perl module
@@ -21,7 +21,7 @@ Summary(sv):	SDL Perlmodul
 Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl SDL
 Summary(zh_CN):	SDL Perl Ä£¿é
 Name:		perl-SDL
-Version:	1.20.0
+Version:	1.20.2
 Release:	1
 License:	LGPL
 Group:		Development/Languages/Perl
@@ -64,7 +64,7 @@ swobody z API SDL i próbuje siê dopasowaæ do idei SDL oraz Perla.
 %{__perl} Makefile.PL
 %{__make} OPTIMIZE="%{rpmcflags} -I/usr/X11R6/include"
 
-%{!?_without_tests:%{__make} test}
+%{?_with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
