@@ -61,7 +61,7 @@ swobody z API SDL i próbuje siê dopasowaæ do idei SDL oraz Perla.
 %patch0 -p1
 
 %build
-perl Makefile.PL
+%{__perl} Makefile.PL
 %{__make} OPTIMIZE="%{rpmcflags} -I/usr/X11R6/include"
 
 %{!?_without_tests:%{__make} test}
