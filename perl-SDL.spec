@@ -39,7 +39,7 @@ BuildRequires:	glut-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	perl-devel >= 5.6
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	rpm-perlprov >= 4.0.2-104
 BuildRequires:	smpeg-devel
 Provides:	perl(SDL::OpenGL)
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
