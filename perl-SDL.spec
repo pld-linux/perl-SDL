@@ -15,9 +15,9 @@ BuildRequires:	SDL_gfx-devel
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL_net-devel
 BuildRequires:	SDL_ttf-devel
+BuildRequires:	glut-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
-BuildRequires:	glut-devel
 BuildRequires:	perl >= 5.6
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	smpeg-devel
@@ -29,6 +29,12 @@ SDL_perl is a package of perl modules that provides both functional
 and object orient interfaces to the Simple DirectMedia Layer for Perl
 5. This package does take some liberties with the SDL API, and
 attempts to adhere to the spirit of both the SDL and Perl.
+
+%description -l pl
+SDL_perl to pakiet z modu³ami perla udostêpniaj±cy z poziomu Perla
+interfejsy zarówno funkcjonalne, jak i zorientowane obiektowo do
+biblioteki SDL (Simple DirectMedia Layer). Pakiet przejmuje trochê
+swobody z API SDL i próbuje siê dopasowaæ do idei SDL oraz Perla.
 
 %prep
 %setup -q -n SDL_perl-%{version}
