@@ -39,7 +39,7 @@ and object orient interfaces to the Simple DirectMedia Layer for Perl
 attempts to adhere to the spirit of both the SDL and Perl.
 
 %description -l pl
-SDL_perl to pakiet z modu³ami perla udostêpniaj±cy z poziomu Perla
+SDL_perl to pakiet z modu³ami Perla udostêpniaj±cy z poziomu Perla
 interfejsy zarówno funkcjonalne, jak i zorientowane obiektowo do
 biblioteki SDL (Simple DirectMedia Layer). Pakiet przejmuje trochê
 swobody z API SDL i próbuje siê dopasowaæ do idei SDL oraz Perla.
