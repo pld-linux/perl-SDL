@@ -2,14 +2,16 @@
 Summary:	SDL perl module
 Summary(pl):	Modu³ perla SDL
 Name:		perl-SDL
-Version:	1.14
+Version:	1.18
 Release:	1
 License:	LGPL
 Group:		Development/Languages/Perl
-Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/SDL/SDL_perl-%{version}.tar.gz
+Source0:	http://sdlperl.org/downloads/SDL_perl-%{version}.tar.gz
 Patch0:		%{name}-detection.patch
+URL:		http://sdlperl.org/
 BuildRequires:	OpenGL-devel
 BuildRequires:	SDL-devel
+BuildRequires:	SDL_gfx-devel
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL_net-devel
 BuildRequires:	SDL_ttf-devel
@@ -18,6 +20,7 @@ BuildRequires:	libpng-devel
 BuildRequires:	glut-devel
 BuildRequires:	perl >= 5.6
 BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	smpeg-devel
 Provides:	perl(SDL::OpenGL)
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
