@@ -1,9 +1,28 @@
+#
+# Conditional build:
+# _without_tests - do not perform "make test"
+#
 %include	/usr/lib/rpm/macros.perl
-Summary:	SDL perl module
-Summary(pl):	Modu³ perla SDL
+Summary:	SDL Perl module
+Summary(cs):	Modul SDL pro Perl
+Summary(da):	Perlmodul SDL
+Summary(de):	SDL Perl Modul
+Summary(es):	Módulo de Perl SDL
+Summary(fr):	Module Perl SDL
+Summary(it):	Modulo di Perl SDL
+Summary(ja):	SDL Perl ¥â¥¸¥å¡¼¥ë
+Summary(ko):	SDL ÆÞ ¸ðÁÙ
+Summary(no):	Perlmodul SDL
+Summary(pl):	Modu³ Perla SDL
+Summary(pt):	Módulo de Perl SDL
+Summary(pt_BR):	Módulo Perl SDL
+Summary(ru):	íÏÄÕÌØ ÄÌÑ Perl SDL
+Summary(sv):	SDL Perlmodul
+Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl SDL
+Summary(zh_CN):	SDL Perl Ä£¿é
 Name:		perl-SDL
-Version:	1.18.5
-Release:	2
+Version:	1.18.7
+Release:	1
 License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	http://sdlperl.org/downloads/SDL_perl-%{version}.tar.gz
@@ -43,7 +62,9 @@ swobody z API SDL i próbuje siê dopasowaæ do idei SDL oraz Perla.
 
 %build
 perl Makefile.PL
-%{__make}
+%{__make} OPTIMIZE="%{rpmcflags}"
+
+%{!?_without_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -58,4 +79,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc BUGS CHANGELOG TODO README
 %{_mandir}/man3/*
 %{perl_sitearch}/SDL*
-%{perl_sitearch}/auto/SDL*
+%dir %{perl_sitearch}/auto/SDL_perl
+%{perl_sitearch}/auto/SDL_perl/SDL_perl.bs
+%attr(755,root,root) %{perl_sitearch}/auto/SDL_perl/SDL_perl.so
