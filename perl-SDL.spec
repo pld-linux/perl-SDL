@@ -10,7 +10,7 @@ Version:	2.1.0
 Release:	1
 License:	LGPL
 Group:		Development/Languages/Perl
-Source0:	http://search.cpan.org/CPAN/authors/id/D/DG/DGOEHRIG/SDL_Perl-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-authors/id/D/DG/DGOEHRIG/SDL_Perl-%{version}.tar.gz
 # Source0-md5:	7dc4ab6620003f37ff4093d052ed46fa
 Patch0:		%{name}-detection.patch
 URL:		http://search.cpan.org/dist/SDL_Perl/
