@@ -3,7 +3,7 @@ Summary:	SDL perl module
 Summary(pl):	Modu³ perla SDL
 Name:		perl-SDL
 Version:	1.18.5
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	http://sdlperl.org/downloads/SDL_perl-%{version}.tar.gz
@@ -15,6 +15,7 @@ BuildRequires:	SDL_gfx-devel
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL_net-devel
 BuildRequires:	SDL_ttf-devel
+BuildRequires:	SDL_image-devel
 BuildRequires:	glut-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
