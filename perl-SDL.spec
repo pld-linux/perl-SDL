@@ -18,7 +18,7 @@ BuildRequires:	SDL_ttf-devel
 BuildRequires:	glut-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
-BuildRequires:	perl >= 5.6
+BuildRequires:	perl-devel >= 5.6
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	smpeg-devel
 Provides:	perl(SDL::OpenGL)
