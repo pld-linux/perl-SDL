@@ -26,6 +26,7 @@ Release:	2
 License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	ftp://sdlperl.org/SDL_perl/SDL_perl-%{version}.tar.gz
+# Source0-md5:	041617aec124677083ecef04aa48f927
 Patch0:		%{name}-detection.patch
 URL:		http://sdlperl.org/
 BuildRequires:	OpenGL-devel
