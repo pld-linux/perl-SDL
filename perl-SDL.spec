@@ -7,7 +7,7 @@ Summary:	Simple DirectMedia Layer Perl
 Summary(pl):	Interfejs Simple DirectMedia Layer dla Perla
 Name:		perl-SDL
 Version:	2.1.2
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/D/DG/DGOEHRIG/SDL_Perl-%{version}.tar.gz
@@ -47,6 +47,7 @@ swobody z API SDL i próbuje siê dopasowaæ do idei SDL oraz Perla.
 %prep
 %setup -q -n SDL_Perl-%{version}
 #%patch0 -p1
+mv t/mixerpm.t{,.blah}	# requires audio device
 
 %build
 %{__perl} Build.PL \
