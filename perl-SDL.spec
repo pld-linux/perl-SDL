@@ -6,14 +6,14 @@
 Summary:	Simple DirectMedia Layer Perl
 Summary(pl):	Interfejs Simple DirectMedia Layer dla Perla
 Name:		perl-SDL
-Version:	1.20.0
-Release:	5
+Version:	2.1.0
+Release:	0.1
 License:	LGPL
 Group:		Development/Languages/Perl
-Source0:	ftp://sdlperl.org/SDL_perl/SDL_perl-%{version}.tar.gz
-# Source0-md5:	041617aec124677083ecef04aa48f927
+Source0:	http://search.cpan.org/CPAN/authors/id/D/DG/DGOEHRIG/SDL_Perl-%{version}.tar.gz
+# Source0-md5:	7dc4ab6620003f37ff4093d052ed46fa
 Patch0:		%{name}-detection.patch
-URL:		http://sdlperl.org/
+URL:		http://search.cpan.org/dist/SDL_Perl/
 BuildRequires:	OpenGL-devel
 BuildRequires:	SDL-devel
 BuildRequires:	SDL_gfx-devel >= 2.0.10
@@ -24,6 +24,8 @@ BuildRequires:	SDL_ttf-devel
 BuildRequires:	glut-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
+BuildRequires:	perl-Module-Build
+BuildRequires:	perl-Test-Simple
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	smpeg-devel
@@ -43,21 +45,18 @@ biblioteki SDL (Simple DirectMedia Layer). Pakiet przejmuje trochê
 swobody z API SDL i próbuje siê dopasowaæ do idei SDL oraz Perla.
 
 %prep
-%setup -q -n SDL_perl-%{version}
+%setup -q -n SDL_Perl-%{version}
 %patch0 -p1
 
 %build
-%{__perl} Makefile.PL \
-	INSTALLDIRS=vendor
-%{__make} \
-	OPTIMIZE="%{rpmcflags} -I/usr/X11R6/include"
-
-%{?with_tests:%{__make} test}
+%{__perl} Build.PL
+./Build
+%{?with_tests:./Build test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
+./Build install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
