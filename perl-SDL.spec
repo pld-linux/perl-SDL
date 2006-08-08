@@ -26,6 +26,7 @@ BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	perl-Module-Build
 BuildRequires:	perl-Test-Simple
+BuildRequires:	perl-YAML
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	smpeg-devel
