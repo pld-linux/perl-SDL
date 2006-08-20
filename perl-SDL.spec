@@ -12,16 +12,14 @@ License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/D/DG/DGOEHRIG/SDL_Perl-%{version}.tar.gz
 # Source0-md5:	6ce26e1b710ce52def4ec22637cd5176
-Patch0:		%{name}-detection.patch
 URL:		http://search.cpan.org/dist/SDL_Perl/
-BuildRequires:	OpenGL-devel
+BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	SDL-devel
 BuildRequires:	SDL_gfx-devel >= 2.0.10
 BuildRequires:	SDL_image-devel
 BuildRequires:	SDL_mixer-devel
 BuildRequires:	SDL_net-devel
 BuildRequires:	SDL_ttf-devel
-BuildRequires:	glut-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	perl-Module-Build
@@ -47,7 +45,6 @@ swobody z API SDL i próbuje siê dopasowaæ do idei SDL oraz Perla.
 
 %prep
 %setup -q -n SDL_Perl-%{version}
-#%patch0 -p1
 mv t/mixerpm.t{,.blah}	# requires audio device
 
 %build
@@ -55,7 +52,8 @@ mv t/mixerpm.t{,.blah}	# requires audio device
 	installdirs=vendor \
 	perl=%{__perl} \
 	destdir=$RPM_BUILD_ROOT \
-	config='optflags=%{rpmcflags}'
+	config='optimize=%{rpmcflags}' \
+	config='lddlflags=-shared %{rpmldflags}'
 ./Build
 
 %{?with_tests:./Build test}
