@@ -4,7 +4,7 @@
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	Simple DirectMedia Layer Perl
-Summary(pl):	Interfejs Simple DirectMedia Layer dla Perla
+Summary(pl.UTF-8):   Interfejs Simple DirectMedia Layer dla Perla
 Name:		perl-SDL
 Version:	2.1.3
 Release:	0.1
@@ -37,11 +37,11 @@ and object orient interfaces to the Simple DirectMedia Layer for Perl
 5. This package does take some liberties with the SDL API, and
 attempts to adhere to the spirit of both the SDL and Perl.
 
-%description -l pl
-SDL_perl to pakiet z modu³ami Perla udostêpniaj±cy z poziomu Perla
-interfejsy zarówno funkcjonalne, jak i zorientowane obiektowo do
-biblioteki SDL (Simple DirectMedia Layer). Pakiet przejmuje trochê
-swobody z API SDL i próbuje siê dopasowaæ do idei SDL oraz Perla.
+%description -l pl.UTF-8
+SDL_perl to pakiet z moduÅ‚ami Perla udostÄ™pniajÄ…cy z poziomu Perla
+interfejsy zarÃ³wno funkcjonalne, jak i zorientowane obiektowo do
+biblioteki SDL (Simple DirectMedia Layer). Pakiet przejmuje trochÄ™
+swobody z API SDL i prÃ³buje siÄ™ dopasowaÄ‡ do idei SDL oraz Perla.
 
 %prep
 %setup -q -n SDL_Perl-%{version}
