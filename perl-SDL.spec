@@ -4,7 +4,7 @@
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	Simple DirectMedia Layer Perl
-Summary(pl.UTF-8):   Interfejs Simple DirectMedia Layer dla Perla
+Summary(pl.UTF-8):	Interfejs Simple DirectMedia Layer dla Perla
 Name:		perl-SDL
 Version:	2.1.3
 Release:	0.1
