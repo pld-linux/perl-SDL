@@ -12,6 +12,8 @@ License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/D/DG/DGOEHRIG/SDL_Perl-%{version}.tar.gz
 # Source0-md5:	6ce26e1b710ce52def4ec22637cd5176
+Patch0:		%{name}-gfxPie.patch
+Patch1:		%{name}-no-mixertest.patch
 URL:		http://search.cpan.org/dist/SDL_Perl/
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	SDL-devel
@@ -46,6 +48,9 @@ swobody z API SDL i próbuje się dopasować do idei SDL oraz Perla.
 
 %prep
 %setup -q -n SDL_Perl-%{version}
+%patch0 -p0
+%patch1 -p1
+
 mv t/mixerpm.t{,.blah}	# requires audio device
 
 %build
@@ -57,12 +62,21 @@ mv t/mixerpm.t{,.blah}	# requires audio device
 	config='lddlflags=-shared %{rpmldflags}'
 ./Build
 
+# <sigh> I don't know why but for some reason these dirs get put under
+# blib/arch/auto/src instead of blib/arch/auto causing them to be installed
+# in the wrong location and "./Build test" to fail. We copy them because if
+# we move them the next call to ./Build will recreate them in the wrong
+# location anyways. Unfortunatly with the copy the wrong located originals
+# will also end up getting installed so we must remove those in %%install
+cp -r blib/arch/auto/src/SDL* blib/arch/auto
+
 %{?with_tests:./Build test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 ./Build install
+rm -rf $RPM_BUILD_ROOT%{perl_vendorarch}/auto/src
 
 %clean
 rm -rf $RPM_BUILD_ROOT
