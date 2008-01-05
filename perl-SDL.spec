@@ -22,6 +22,7 @@ BuildRequires:	SDL_net-devel
 BuildRequires:	SDL_ttf-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
+BuildRequires:	perl-ExtUtils-CBuilder
 BuildRequires:	perl-Module-Build
 BuildRequires:	perl-Test-Simple
 BuildRequires:	perl-YAML
