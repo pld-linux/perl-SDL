@@ -89,11 +89,8 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/SDL
 %dir %{perl_vendorarch}/auto/SDL
 %dir %{perl_vendorarch}/auto/SDL_perl
-%{perl_vendorarch}/auto/SDL_perl/SDL_perl.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/SDL_perl/SDL_perl.so
 %dir %{perl_vendorarch}/auto/SDL/OpenGL
-%{perl_vendorarch}/auto/SDL/OpenGL/OpenGL.bs
 %attr(755,root,root)%{perl_vendorarch}/auto/SDL/OpenGL/OpenGL.so
 %dir %{perl_vendorarch}/auto/SDL/SFont
-%{perl_vendorarch}/auto/SDL/SFont/SFont.bs
 %attr(755,root,root)%{perl_vendorarch}/auto/SDL/SFont/SFont.so
