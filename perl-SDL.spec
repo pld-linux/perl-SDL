@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 Summary:	Simple DirectMedia Layer Perl
 Summary(pl.UTF-8):	Interfejs Simple DirectMedia Layer dla Perla
 Name:		perl-SDL
