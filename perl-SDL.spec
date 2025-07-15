@@ -47,8 +47,8 @@ swobody z API SDL i próbuje się dopasować do idei SDL oraz Perla.
 
 %prep
 %setup -q -n SDL_Perl-%{version}
-%patch0 -p0
-%patch1 -p1
+%patch -P0 -p0
+%patch -P1 -p1
 
 mv t/mixerpm.t{,.blah}	# requires audio device
 
