@@ -6,7 +6,7 @@ Summary:	Simple DirectMedia Layer Perl
 Summary(pl.UTF-8):	Interfejs Simple DirectMedia Layer dla Perla
 Name:		perl-SDL
 Version:	2.1.3
-Release:	21
+Release:	22
 License:	LGPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/D/DG/DGOEHRIG/SDL_Perl-%{version}.tar.gz
