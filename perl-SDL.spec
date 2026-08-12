@@ -13,6 +13,7 @@ Source0:	http://www.cpan.org/modules/by-authors/id/D/DG/DGOEHRIG/SDL_Perl-%{vers
 # Source0-md5:	6ce26e1b710ce52def4ec22637cd5176
 Patch0:		%{name}-gfxPie.patch
 Patch1:		%{name}-no-mixertest.patch
+Patch2:		types.patch
 URL:		http://search.cpan.org/dist/SDL_Perl/
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	SDL-devel
@@ -49,6 +50,7 @@ swobody z API SDL i próbuje się dopasować do idei SDL oraz Perla.
 %setup -q -n SDL_Perl-%{version}
 %patch -P0 -p0
 %patch -P1 -p1
+%patch -P2 -p1
 
 mv t/mixerpm.t{,.blah}	# requires audio device
 
